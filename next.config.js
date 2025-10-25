@@ -10,14 +10,15 @@ const nextConfig = {
   },
 
   // API proxy to WordPress (prevents CORS issues)
-  async rewrites() {
-    return [
-      {
-        source: '/api/wp/:path*',
-        destination: `${process.env.WORDPRESS_URL}/wp-json/reviewflow/v1/:path*`,
-      },
-    ];
-  },
+  // Note: Disabled for now - API client connects directly to WordPress
+  // async rewrites() {
+  //   return [
+  //     {
+  //       source: '/api/wp/:path*',
+  //       destination: `${process.env.WORDPRESS_URL}/wp-json/reviewflow/v1/:path*`,
+  //     },
+  //   ];
+  // },
 
   // Security headers
   async headers() {
