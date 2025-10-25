@@ -131,8 +131,15 @@ export default function DashboardPage() {
   );
 }
 
-function StatCard({ title, value, icon, color }: any) {
-  const colorClasses = {
+interface StatCardProps {
+  title: string;
+  value: string | number;
+  icon: string;
+  color: 'blue' | 'yellow' | 'green' | 'purple';
+}
+
+function StatCard({ title, value, icon, color }: StatCardProps) {
+  const colorClasses: Record<string, string> = {
     blue: 'from-blue-500 to-blue-600',
     yellow: 'from-yellow-500 to-yellow-600',
     green: 'from-green-500 to-green-600',
@@ -154,13 +161,21 @@ function StatCard({ title, value, icon, color }: any) {
   );
 }
 
-function QuickAction({ title, description, href, icon, badge }: any) {
+interface QuickActionProps {
+  title: string;
+  description: string;
+  href: string;
+  icon: string;
+  badge?: number;
+}
+
+function QuickAction({ title, description, href, icon, badge }: QuickActionProps) {
   return (
     <a
       href={href}
       className="block bg-white rounded-lg shadow hover:shadow-lg transition-shadow p-6 relative"
     >
-      {badge > 0 && (
+      {badge !== undefined && badge > 0 && (
         <span className="absolute top-4 right-4 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full">
           {badge}
         </span>
