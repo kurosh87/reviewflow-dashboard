@@ -1,0 +1,14 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": ".next",
+  "devCommand": "npm run dev",
+  "installCommand": "npm install",
+  "framework": "nextjs",
+  "regions": ["iad1"],
+  "env": {
+    "WORDPRESS_URL": "@wordpress_url",
+    "WORDPRESS_USERNAME": "@wordpress_username",
+    "WORDPRESS_APP_PASSWORD": "@wordpress_app_password",
+    "NEXTAUTH_SECRET": "@nextauth_secret"
+  }
+}
